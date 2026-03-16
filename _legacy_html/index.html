@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI VOICE - Scalable AI Voice Agents</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo"><strong>AI</strong> VOICE</a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Industry</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="login-btn">Login</a>
+                <a href="#" class="signup-btn btn-primary">Sign up</a>
+            </div>
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- background gradients... -->
+        <div class="hero-bg-gradient-orange"></div>
+        <div class="hero-bg-gradient-pink"></div>
+        
+        <div class="container text-center">
+            <h1 class="hero-title">Transform Your <span class="highlight">Customer Support</span> Operations <br> With Scalable AI Voice Agents</h1>
+            <p class="hero-subtitle">Deploying AI voice agents in minutes. Providing 24/7 intelligent <br> conversational resolutions.</p>
+            
+            <form class="hero-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" placeholder="Work phone" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Work email" required>
+                </div>
+                <button type="submit" class="btn-primary">Get started <i class="fas fa-arrow-right"></i></button>
+            </form>
+
+            <div class="hero-mockups">
+                <!-- 3 floating cards/dashboard elements -->
+                <div class="mockup mockup-left">
+                    <img src="assets/dashboard_left.png" alt="Stats Mockup" class="mockup-img">
+                </div>
+                <div class="mockup mockup-center">
+                     <img src="assets/dashboard_center.png" alt="Call Interface Mockup" class="mockup-img">
+                </div>
+                <div class="mockup mockup-right">
+                     <img src="assets/dashboard_right.png" alt="Analytics Mockup" class="mockup-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voice AI Tier Section -->
+    <section class="tier-section">
+        <div class="container split-layout">
+            <div class="content-side">
+                <p class="section-label">AGENT</p>
+                <h2>Voice AI that is in a tier of its own</h2>
+                <p>Deploy scalable voice agents ready to resolve over 50% of inbound volume and reach entirely custom outbound campaigns.</p>
+                
+                <div class="feature-item">
+                    <div class="icon-circle"><i class="fas fa-phone"></i></div>
+                    <div class="feature-text">
+                        <h4>Outbound calls <span class="badge new-badge">NEW!</span></h4>
+                        <p>Generate high quality appointments to lower acquisition costs.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item mt-2">
+                    <div class="icon-circle"><i class="fas fa-headset"></i></div>
+                    <div class="feature-text">
+                        <h4>Inbound calls</h4>
+                        <p>Fully automate tier 1 customer support handling and reduce overall costs quickly.</p>
+                    </div>
+                </div>
+
+                <a href="#" class="btn-primary mt-3">Get started</a>
+            </div>
+            <div class="visual-side">
+                <div class="phone-mockup">
+                    <img src="assets/phone_mockup.png" alt="Phone Interface">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map/Languages Section -->
+    <section class="map-section text-center">
+        <div class="container relative">
+            <p class="section-label">LANGUAGES</p>
+            <h2>60 Languages And Accents Here</h2>
+            <p>Go global with 60 supported languages with dozens of corresponding <br> accents for multiple localized dialects.</p>
+            
+            <div class="map-container mt-4">
+                <img src="assets/world_map.png" alt="World Map" class="world-map">
+                <!-- Floating Card -->
+                <div class="map-card">
+                    <div class="card-header">
+                        <img src="assets/avatar.png" alt="Avatar" class="avatar-sm">
+                        <div class="card-info">
+                            <h5>"Arabic coming right up"</h5>
+                            <span>0:03 / 0:13</span>
+                        </div>
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <div class="audio-progress">
+                        <div class="progress-bar" style="width: 25%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Savings Widget Section -->
+    <section class="savings-section text-center">
+        <div class="container">
+            <p class="section-label">SAVINGS</p>
+            <h2>Automate & Every Call From Scheduling To <br> Support & Orders</h2>
+            <p>Save over $1,200 a month per employee going with an automated system.</p>
+            
+            <div class="savings-calculator mt-4">
+                <div class="calculator-content">
+                    <h3>Automate all customer calls <br> <span class="highlight-orange">from day 1 and beyond.</span></h3>
+                    <!-- A circle graphic goes here -->
+                    <div class="savings-result mt-4">
+                        <span class="currency">$</span><span class="amount">6k</span><span class="period">/ month</span>
+                        <p>Saved compared to a human</p>
+                    </div>
+                </div>
+                <div class="calculator-controls text-left">
+                    <div class="settings-header">
+                        <img src="assets/slider_icon.png" alt="Settings" class="icon-sm"> Settings
+                    </div>
+                    
+                    <div class="control-group mt-3">
+                        <label>AI calls volume</label>
+                        <input type="range" min="100" max="10000" value="5000" class="slider">
+                        <div class="slider-value">5,000 month</div>
+                    </div>
+
+                    <div class="control-group mt-3">
+                        <label>Average duration</label>
+                        <div class="tabs">
+                            <button class="tab">20 mins</button>
+                            <button class="tab">30 mins</button>
+                            <button class="tab active">40 mins</button>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group switch-group mt-3">
+                        <label>Add SMS confirmation</label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider-toggle round"></span>
+                        </label>
+                    </div>
+
+                    <a href="#" class="btn-primary-outline mt-3 btn-block text-center">Get started</a>
+                </div>
+            </div>
+        </div>
+    <!-- Heartbeat Details Section -->
+    <section class="details-section">
+        <div class="container text-center">
+            <p class="section-label">THE HEARTBEAT</p>
+            <h2>A real team member that puts a pulse on your business</h2>
+            <p>Provide around-the-clock support without the payroll. Transform every interaction.</p>
+
+            <div class="features-grid mt-4">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="card-icon red-icon"><i class="fas fa-phone-slash"></i></div>
+                    <h4>Never Miss a Call</h4>
+                    <p>Turn every missed call into a client. Handle after-hours support and FAQs instantly. Instead of a voicemail, our system acts as a second factor—a representative answering questions and shrinking your lead-to-close ratio.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="card-icon orange-icon"><i class="fas fa-comments"></i></div>
+                    <h4>Web Chat & Smart Routing</h4>
+                    <p>Integrate a web platform where visitors can chat, ask questions, and schedule appointments. If a human is needed, the AI seamlessly transfers the conversation to an active live person within your business.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="card-icon brown-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h4>Custom Branding & CRM</h4>
+                    <p>Custom to your business—it knows you inside and out. Get actionable reports, task assignments, and follow-ups. Integrate with your existing CRM, or let us build a custom tracking backend to manage leads and appointments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features-section text-center bg-gray">
+        <div class="container">
+            <h2>Endless use cases</h2>
+            <p>Find the exact setup and capability you are looking for.</p>
+            
+            <div class="filters mt-4">
+                <button class="filter-btn active">View All</button>
+                <button class="filter-btn">Inbound</button>
+                <button class="filter-btn">Outbound</button>
+            </div>
+
+            <div class="features-grid mt-4">
+                <!-- Feature Card 1 -->
+                <div class="feature-card">
+                    <div class="card-icon red-icon"><i class="fas fa-heart"></i></div>
+                    <h4>Inbound calls</h4>
+                    <p>Automate tier 1 customer support handling and reduce overall costs easily.</p>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="feature-card">
+                    <div class="card-icon brown-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <h4>Outbound calls</h4>
+                    <p>Generate high quality appointments to lower acquisition costs easily.</p>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="feature-card">
+                    <div class="card-icon orange-icon"><i class="fas fa-comment-dots"></i></div>
+                    <h4>Appointment Reminders</h4>
+                    <p>Automate reminders and reduce no shows easily.</p>
+                </div>
+                <!-- Feature Card 4 -->
+                <div class="feature-card">
+                    <div class="card-icon brown-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h4>Automated Survey</h4>
+                    <p>Automatically gather customer feedback efficiently.</p>
+                </div>
+                <!-- Feature Card 5 -->
+                <div class="feature-card">
+                    <div class="card-icon orange-icon"><i class="far fa-calendar-alt"></i></div>
+                    <h4>Lead Qualification</h4>
+                    <p>Qualify leads faster to hand over to sales effectively.</p>
+                </div>
+                <!-- Feature Card 6 -->
+                <div class="feature-card">
+                    <div class="card-icon red-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h4>Seamless Integrations</h4>
+                    <p>Connect with CRM platforms efficiently easily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Section -->
+    <section class="platform-section text-center">
+        <div class="container">
+            <h2 class="highlight-orange">Start your own platform with <br> White-labeling Now</h2>
+            <p>Host on dedicated HIPAA compliant infrastructure for healthcare and others.</p>
+            <a href="#" class="btn-primary mt-2">Get started</a>
+            
+            <div class="platform-mockup mt-4">
+                <img src="assets/dashboard_large.png" alt="Platform Dashboard" class="full-mockup">
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="integrations-section text-center bg-gray">
+        <div class="container">
+            <div class="integration-icons">
+                <!-- Row of floating app icons -->
+                <img src="assets/icon_messenger.png" class="floating-icon">
+                <img src="assets/icon_hubspot.png" class="floating-icon">
+                <img src="assets/icon_zendesk.png" class="floating-icon">
+                <img src="assets/icon_stripe.png" class="floating-icon">
+                <img src="assets/icon_zapier.png" class="floating-icon">
+            </div>
+            
+            <h2 class="mt-3">Integrate with Apps you are already using <br> in <span class="highlight-orange">one simple click</span>.</h2>
+            <p>Connect instantly with thousands of apps via Zapier and custom APIs.</p>
+            
+            <div class="testimonials mt-4">
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <img src="assets/avatar1.png" alt="User">
+                        <div>
+                            <h5>Michael R. <span class="badge blue-badge">Manager</span></h5>
+                        </div>
+                    </div>
+                    <p>"AI Voice has reduced our support wait times."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <img src="assets/avatar2.png" alt="User">
+                        <div>
+                            <h5>Sarah T. <span class="badge green-badge">Sales Lead</span></h5>
+                        </div>
+                    </div>
+                    <p>"Integrating it with our CRM was super easy."</p>
+                </div>
+            </div>
+            
+            <a href="#" class="btn-primary mt-4">View Integrations</a>
+        </div>
+    </section>
+
+    <!-- Multi-Industry Platform -->
+    <section class="industry-section text-center">
+        <div class="container">
+            <p class="section-label">INDUSTRIES</p>
+            <h2>Multi-Industry platform to scale inside <br> of business with AI</h2>
+            <p>Pick up more momentum with your operation.</p>
+            
+            <div class="industry-grid mt-4">
+                <!-- Column 1 -->
+                <div class="ind-col">
+                    <div class="mockup-card">
+                        <img src="assets/ind_1.png" alt="Appt Booking">
+                    </div>
+                    <div class="mockup-card mt-3">
+                        <img src="assets/ind_2.png" alt="Dashboard">
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="ind-col mt-4">
+                    <div class="mockup-card">
+                        <img src="assets/ind_3.png" alt="Settings">
+                    </div>
+                    <div class="mockup-card mt-3 text-left p-3">
+                        <h5>Fully automatic scheduling.</h5>
+                        <p class="text-sm">Works 24/7 without delays.</p>
+                    </div>
+                    <div class="mockup-card mt-3">
+                        <img src="assets/ind_4.png" alt="List">
+                    </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="ind-col mt-2">
+                    <div class="mockup-card">
+                        <img src="assets/ind_5.png" alt="Form">
+                    </div>
+                    <div class="mockup-card mt-3 text-left p-3">
+                        <h5>Smart AI System</h5>
+                        <p class="text-sm">Never misses a beat.</p>
+                    </div>
+                    <div class="mockup-card mt-3">
+                        <img src="assets/phone_mockup.png" alt="Phone">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section text-center" id="pricing">
+        <!-- background glow for pricing section -->
+        <div class="pricing-bg-gradient"></div>
+        
+        <div class="container relative">
+            <p class="section-label">PLANS</p>
+            <h2>Ready to scale your business <br> with AI?</h2>
+            <p>Start with our 14-day free trial. No credit card required.</p>
+            
+            <div class="billing-toggle mt-3">
+                <span class="active">Monthly</span>
+                <label class="switch">
+                     <input type="checkbox">
+                     <span class="slider-toggle round"></span>
+                </label>
+                <span>Yearly <span class="badge new-badge">Save 20%</span></span>
+            </div>
+
+            <div class="pricing-grid mt-4">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <div class="text-left">
+                        <h3 class="highlight-orange">Free</h3>
+                        <p class="text-sm">Great to start building.</p>
+                        <div class="price">
+                            <span class="currency">$</span><span class="amount">0</span><span class="period">/month</span>
+                        </div>
+                        <a href="#" class="btn-primary-outline btn-block mt-3 text-center">Get started</a>
+                        <ul class="features-list mt-3">
+                            <li><i class="fas fa-check text-orange"></i> 100 free minutes included</li>
+                            <li><i class="fas fa-check text-orange"></i> Test and preview access</li>
+                            <li><i class="fas fa-check text-orange"></i> Standard voices</li>
+                            <li><i class="fas fa-times text-gray"></i> Outbound calling</li>
+                            <li><i class="fas fa-times text-gray"></i> Priority Support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="pricing-card popular">
+                    <div class="text-left">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Pro</h3>
+                        <p class="text-sm">For growing operations.</p>
+                        <div class="price">
+                            <span class="currency">$</span><span class="amount">49</span><span class="period">/month</span>
+                        </div>
+                        <a href="#" class="btn-primary-outline btn-block mt-3 text-center">Get started</a>
+                        <ul class="features-list mt-3">
+                            <li><i class="fas fa-check text-orange"></i> 1,000 minutes included</li>
+                            <li><i class="fas fa-check text-orange"></i> Unlimited test access</li>
+                            <li><i class="fas fa-check text-orange"></i> Premium cloned voices</li>
+                            <li><i class="fas fa-check text-orange"></i> Outbound calling</li>
+                            <li><i class="fas fa-check text-orange"></i> Email Support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Custom Plan -->
+                <div class="pricing-card dark-card">
+                    <div class="text-left">
+                        <h3 class="highlight-orange">Enterprise</h3>
+                        <p class="text-sm">For large scale operations.</p>
+                        <div class="price">
+                            <span class="amount">Let's talk</span>
+                        </div>
+                        <a href="#" class="btn-primary btn-block mt-3 text-center">Contact Sales</a>
+                        <ul class="features-list mt-3">
+                            <li><i class="fas fa-check text-orange"></i> Custom minutes package</li>
+                            <li><i class="fas fa-check text-orange"></i> Unlimited test access</li>
+                            <li><i class="fas fa-check text-orange"></i> Premium cloned voices</li>
+                            <li><i class="fas fa-check text-orange"></i> Unlimited concurrent calls</li>
+                            <li><i class="fas fa-check text-orange"></i> 24/7 Priority Support & SLAs</li>
+                            <li><i class="fas fa-check text-orange"></i> Dedicated Account Manager</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NEW SECTIONS START ========== -->
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">BENEFITS</p>
+                <h2>Why businesses choose <span class="highlight-orange">AI VOICE</span></h2>
+                <p>Enterprise-grade features that scale with your growth</p>
+            </div>
+
+            <div class="benefits-grid mt-4">
+                <!-- Customizable Card -->
+                <div class="benefit-card benefit-card-stat">
+                    <div class="benefit-stat-circle">
+                        <svg class="stat-underline" viewBox="0 0 254 104" fill="none">
+                            <path d="M112.891 97.7022C140.366 97.0802 171.004 94.6715 201.087 87.5116C210.43 85.2881 219.615 82.6412 228.284 78.2473C232.198 76.3179 235.905 73.9942 239.348 71.3124C241.85 69.2557 243.954 66.7571 245.555 63.9408C249.34 57.3235 248.281 50.5341 242.498 45.6109C239.033 42.7237 235.228 40.2703 231.169 38.3054C219.443 32.7209 207.141 28.4382 194.482 25.534C184.013 23.1927 173.358 21.7755 162.64 21.2989C161.376 21.3512 160.113 21.181 158.908 20.796C158.034 20.399 156.857 19.1682 156.962 18.4535C157.115 17.8927 157.381 17.3689 157.743 16.9139C158.104 16.4588 158.555 16.0821 159.067 15.8066C160.14 15.4683 161.274 15.3733 162.389 15.5286C179.805 15.3566 196.626 18.8373 212.998 24.462C220.978 27.2494 228.798 30.4747 236.423 34.1232C240.476 36.1159 244.202 38.7131 247.474 41.8258C254.342 48.2578 255.745 56.9397 251.841 65.4892C249.793 69.8582 246.736 73.6777 242.921 76.6327C236.224 82.0192 228.522 85.4602 220.502 88.2924C205.017 93.7847 188.964 96.9081 172.738 99.2109C153.442 101.949 133.993 103.478 114.506 103.79C91.1468 104.161 67.9334 102.97 45.1169 97.5831C36.0094 95.5616 27.2626 92.1655 19.1771 87.5116C13.839 84.5746 9.1557 80.5802 5.41318 75.7725C-0.54238 67.7259 -1.13794 59.1763 3.25594 50.2827C5.82447 45.3918 9.29572 41.0315 13.4863 37.4319C24.2989 27.5721 37.0438 20.9681 50.5431 15.7272C68.1451 8.8849 86.4883 5.1395 105.175 2.83669C129.045 0.0992292 153.151 0.134761 177.013 2.94256C197.672 5.23215 218.04 9.01724 237.588 16.3889C240.089 17.3418 242.498 18.5197 244.933 19.6446C246.627 20.4387 247.725 21.6695 246.997 23.615C246.455 25.1105 244.814 25.5605 242.63 24.5811C230.322 18.9961 217.233 16.1904 204.117 13.4376C188.761 10.3438 173.2 8.36665 157.558 7.52174C129.914 5.70776 102.154 8.06792 75.2124 14.5228C60.6177 17.8788 46.5758 23.2977 33.5102 30.6161C26.6595 34.3329 20.4123 39.0673 14.9818 44.658C12.9433 46.8071 11.1336 49.1622 9.58207 51.6855C4.87056 59.5336 5.61172 67.2494 11.9246 73.7608C15.2064 77.0494 18.8775 79.925 22.8564 82.3236C31.6176 87.7101 41.3848 90.5291 51.3902 92.5804C70.6068 96.5773 90.0219 97.7419 112.891 97.7022Z" fill="currentColor"/>
+                        </svg>
+                        <span class="stat-number">100%</span>
+                    </div>
+                    <h4>Customizable</h4>
+                    <p>Fully tailored to your business needs and brand voice</p>
+                </div>
+
+                <!-- Secure Card -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-ring">
+                        <div class="icon-inner">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="ring-outer"></div>
+                        <div class="ring-middle"></div>
+                    </div>
+                    <h4>Secure by Default</h4>
+                    <p>Enterprise-grade security with HIPAA compliance and end-to-end encryption</p>
+                </div>
+
+                <!-- Fast Card -->
+                <div class="benefit-card">
+                    <div class="benefit-chart">
+                        <svg viewBox="0 0 386 123" class="chart-svg">
+                            <path class="chart-line" d="M3 121C3 121 15 94 36 88C57 82 67 81 67 81C67 81 80 81 91 81C103 81 100 64 109 64C117 64 118 92 125 92C133 92 142 79 154 81C165 83 186 92 193 92C200 92 205 64 213 64C221 64 238 94 243 92C249 90 258 60 265 60C271 60 283 88 286 88C294 88 299 73 304 73C311 73 321 66 334 64C346 62 347 82 362 81C378 79 383 107 383 107" fill="none" stroke="var(--primary-orange)" stroke-width="3"/>
+                            <path class="chart-fill" d="M3 123C3 123 15 94 36 88C57 82 67 81 67 81C67 81 80 81 91 81C103 81 100 64 109 64C117 64 118 92 125 92C133 92 142 79 154 81C165 83 186 92 193 92C200 92 205 64 213 64C221 64 238 94 243 92C249 90 258 60 265 60C271 60 283 88 286 88C294 88 299 73 304 73C311 73 321 66 334 64C346 62 347 82 362 81C378 79 383 107 383 107V123H3Z" fill="url(#chartGradient)"/>
+                            <defs>
+                                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="var(--primary-orange)" stop-opacity="0.3"/>
+                                    <stop offset="100%" stop-color="var(--primary-orange)" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h4>Lightning Fast</h4>
+                    <p>Sub-100ms response times for natural conversations</p>
+                </div>
+
+                <!-- Analytics Card -->
+                <div class="benefit-card benefit-card-wide">
+                    <div class="benefit-wide-content">
+                        <div class="benefit-wide-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-wide-text">
+                            <h4>Real-time Analytics</h4>
+                            <p>Monitor call performance, sentiment analysis, and conversion rates with live dashboards</p>
+                        </div>
+                    </div>
+                    <div class="benefit-mini-chart">
+                        <div class="mini-chart-bar" style="height: 40%"></div>
+                        <div class="mini-chart-bar" style="height: 60%"></div>
+                        <div class="mini-chart-bar" style="height: 45%"></div>
+                        <div class="mini-chart-bar" style="height: 80%"></div>
+                        <div class="mini-chart-bar" style="height: 65%"></div>
+                        <div class="mini-chart-bar" style="height: 90%"></div>
+                        <div class="mini-chart-bar active" style="height: 100%"></div>
+                    </div>
+                </div>
+
+                <!-- Team Card -->
+                <div class="benefit-card benefit-card-wide">
+                    <div class="benefit-wide-content">
+                        <div class="benefit-wide-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="benefit-wide-text">
+                            <h4>Team Collaboration</h4>
+                            <p>Multi-user access with role-based permissions for seamless team workflows</p>
+                        </div>
+                    </div>
+                    <div class="benefit-avatars">
+                        <div class="avatar-stack">
+                            <img src="assets/avatar.png" alt="Team member" class="stack-avatar">
+                            <img src="assets/avatar1.png" alt="Team member" class="stack-avatar">
+                            <img src="assets/avatar2.png" alt="Team member" class="stack-avatar">
+                            <div class="stack-avatar stack-more">+5</div>
+                        </div>
+                        <div class="avatar-labels">
+                            <span class="avatar-label">Marketing</span>
+                            <span class="avatar-label">Sales</span>
+                            <span class="avatar-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Section -->
+    <section class="bento-section bg-gray">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">FEATURES</p>
+                <h2>Packed with <span class="highlight-orange">powerful features</span></h2>
+                <p>Everything you need to automate customer conversations at scale</p>
+            </div>
+
+            <div class="bento-grid mt-4">
+                <!-- Large Feature - Dashboard -->
+                <div class="bento-card bento-large">
+                    <div class="bento-content">
+                        <h4>Track Performance Effectively</h4>
+                        <p>Monitor and manage your AI agents with our intuitive dashboard interface</p>
+                    </div>
+                    <div class="bento-visual">
+                        <img src="assets/dashboard_large.png" alt="Dashboard" class="bento-image">
+                        <div class="bento-overlay-top"></div>
+                        <div class="bento-overlay-bottom"></div>
+                    </div>
+                </div>
+
+                <!-- Image Gallery -->
+                <div class="bento-card bento-medium">
+                    <div class="bento-content">
+                        <h4>Multi-Channel Support</h4>
+                        <p>Handle calls, SMS, and web chat from one platform</p>
+                    </div>
+                    <div class="bento-gallery">
+                        <div class="gallery-item" style="--rotate: -8deg"><img src="assets/ind_1.png" alt="Channel 1"></div>
+                        <div class="gallery-item" style="--rotate: 5deg"><img src="assets/ind_2.png" alt="Channel 2"></div>
+                        <div class="gallery-item" style="--rotate: -3deg"><img src="assets/ind_3.png" alt="Channel 3"></div>
+                        <div class="gallery-item" style="--rotate: 7deg"><img src="assets/ind_4.png" alt="Channel 4"></div>
+                        <div class="gallery-item" style="--rotate: -5deg"><img src="assets/ind_5.png" alt="Channel 5"></div>
+                    </div>
+                </div>
+
+                <!-- Video Feature -->
+                <div class="bento-card bento-video">
+                    <div class="bento-content">
+                        <h4>See AI VOICE in Action</h4>
+                        <p>Watch how businesses transform their operations</p>
+                    </div>
+                    <div class="bento-video-thumb">
+                        <img src="assets/dashboard_center.png" alt="Video thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Globe Feature -->
+                <div class="bento-card bento-globe">
+                    <div class="bento-content">
+                        <h4>Deploy Globally</h4>
+                        <p>Instant deployment across 60+ languages and regions</p>
+                    </div>
+                    <div class="globe-container" id="globeCanvas">
+                        <canvas id="globe"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instances/Timeline Section -->
+    <section class="instances-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">HOW IT WORKS</p>
+                <h2>From setup to <span class="highlight-orange">success in minutes</span></h2>
+                <p>Our streamlined process gets you up and running fast</p>
+            </div>
+
+            <div class="orbital-timeline mt-5" id="orbitalTimeline">
+                <div class="orbital-center">
+                    <div class="orbital-core">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="orbital-pulse"></div>
+                    <div class="orbital-pulse orbital-pulse-delay"></div>
+                </div>
+
+                <div class="orbital-ring"></div>
+
+                <div class="orbital-nodes">
+                    <div class="orbital-node" data-step="1" style="--angle: 0deg">
+                        <div class="node-icon completed"><i class="fas fa-cog"></i></div>
+                        <div class="node-label">Configure</div>
+                        <div class="node-card">
+                            <span class="node-status completed">Step 1</span>
+                            <h5>Configure Your Agent</h5>
+                            <p>Set up voice, personality, and knowledge base in minutes</p>
+                            <div class="node-progress">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbital-node" data-step="2" style="--angle: 72deg">
+                        <div class="node-icon completed"><i class="fas fa-plug"></i></div>
+                        <div class="node-label">Integrate</div>
+                        <div class="node-card">
+                            <span class="node-status completed">Step 2</span>
+                            <h5>Connect Your Systems</h5>
+                            <p>Integrate with CRM, calendar, and phone systems</p>
+                            <div class="node-progress">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbital-node" data-step="3" style="--angle: 144deg">
+                        <div class="node-icon in-progress"><i class="fas fa-vial"></i></div>
+                        <div class="node-label">Test</div>
+                        <div class="node-card">
+                            <span class="node-status in-progress">Step 3</span>
+                            <h5>Test & Refine</h5>
+                            <p>Run test calls and fine-tune responses</p>
+                            <div class="node-progress">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbital-node" data-step="4" style="--angle: 216deg">
+                        <div class="node-icon pending"><i class="fas fa-rocket"></i></div>
+                        <div class="node-label">Launch</div>
+                        <div class="node-card">
+                            <span class="node-status pending">Step 4</span>
+                            <h5>Go Live</h5>
+                            <p>Deploy your agent to production</p>
+                            <div class="node-progress">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbital-node" data-step="5" style="--angle: 288deg">
+                        <div class="node-icon pending"><i class="fas fa-chart-bar"></i></div>
+                        <div class="node-label">Scale</div>
+                        <div class="node-card">
+                            <span class="node-status pending">Step 5</span>
+                            <h5>Monitor & Scale</h5>
+                            <p>Track performance and expand capacity</p>
+                            <div class="node-progress">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Globe/Map Section -->
+    <section class="globe-section bg-gray">
+        <div class="container">
+            <div class="globe-layout">
+                <div class="globe-content">
+                    <div class="globe-status-badge">
+                        <span class="status-dot"></span>
+                        All systems operational
+                    </div>
+                    <h2>Global Edge <br><span class="highlight-orange">Network</span></h2>
+                    <p>Deployed across 150+ points of presence worldwide. Your calls are served from the nearest node with ultra-low latency.</p>
+
+                    <div class="globe-stats">
+                        <div class="globe-stat">
+                            <span class="stat-value">150+</span>
+                            <span class="stat-label">Edge Nodes</span>
+                        </div>
+                        <div class="globe-stat-divider"></div>
+                        <div class="globe-stat">
+                            <span class="stat-value">&lt;50ms</span>
+                            <span class="stat-label">Avg Latency</span>
+                        </div>
+                        <div class="globe-stat-divider"></div>
+                        <div class="globe-stat">
+                            <span class="stat-value">99.99%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="globe-visual">
+                    <div class="globe-wrapper">
+                        <canvas id="interactiveGlobe"></canvas>
+                        <div class="globe-glow"></div>
+                    </div>
+                    <p class="globe-hint"><i class="fas fa-hand-pointer"></i> Drag to rotate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Pricing Section with Chart -->
+    <section class="pricing-enhanced-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">PRICING</p>
+                <h2>Pricing that <span class="highlight-orange">scales with you</span></h2>
+                <p>Transparent pricing built for modern businesses</p>
+            </div>
+
+            <div class="pricing-enhanced-grid mt-4">
+                <!-- Free Plan -->
+                <div class="pricing-enhanced-card">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="amount">0</span>
+                        </div>
+                        <p>Best for testing & understanding</p>
+                    </div>
+                    <a href="#" class="btn-primary-outline btn-block">Get Started</a>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Basic Analytics Dashboard</li>
+                        <li><i class="fas fa-check"></i> 100 Minutes Included</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                    </ul>
+                </div>
+
+                <!-- Pro Plan with Chart -->
+                <div class="pricing-enhanced-card pricing-featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-split">
+                        <div class="pricing-main">
+                            <div class="pricing-header">
+                                <h3>Pro Monthly Package</h3>
+                                <div class="pricing-amount highlight-orange">
+                                    <span class="currency">$</span>
+                                    <span class="amount">299</span>
+                                </div>
+                                <p>Perfect for growing businesses</p>
+                            </div>
+
+                            <!-- Popularity Chart -->
+                            <div class="pricing-chart-container">
+                                <div class="chart-header">
+                                    <h5>Plan Popularity</h5>
+                                    <span>Monthly trend</span>
+                                </div>
+                                <div class="pricing-chart">
+                                    <div class="chart-bars">
+                                        <div class="chart-bar" style="--height: 30%"><span>Jan</span></div>
+                                        <div class="chart-bar" style="--height: 45%"><span>Feb</span></div>
+                                        <div class="chart-bar" style="--height: 40%"><span>Mar</span></div>
+                                        <div class="chart-bar" style="--height: 55%"><span>Apr</span></div>
+                                        <div class="chart-bar" style="--height: 65%"><span>May</span></div>
+                                        <div class="chart-bar" style="--height: 75%"><span>Jun</span></div>
+                                        <div class="chart-bar" style="--height: 70%"><span>Jul</span></div>
+                                        <div class="chart-bar" style="--height: 80%"><span>Aug</span></div>
+                                        <div class="chart-bar" style="--height: 85%"><span>Sep</span></div>
+                                        <div class="chart-bar" style="--height: 90%"><span>Oct</span></div>
+                                        <div class="chart-bar" style="--height: 95%"><span>Nov</span></div>
+                                        <div class="chart-bar active" style="--height: 100%"><span>Dec</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pricing-features-side">
+                            <h5>Everything in Free plus:</h5>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Unlimited access to all tools</li>
+                                <li><i class="fas fa-check"></i> Priority customer support</li>
+                                <li><i class="fas fa-check"></i> Advanced analytics dashboard</li>
+                                <li><i class="fas fa-check"></i> Team collaboration included</li>
+                                <li><i class="fas fa-check"></i> Secure cloud storage</li>
+                                <li><i class="fas fa-check"></i> Customizable workflows</li>
+                                <li><i class="fas fa-check"></i> Third-party integrations</li>
+                                <li><i class="fas fa-check"></i> Role-based access control</li>
+                            </ul>
+                            <div class="pricing-cta">
+                                <a href="#" class="btn-primary">Get Started</a>
+                                <a href="#" class="btn-primary-outline">Start Free Trial</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted/Logo Cloud Section -->
+    <section class="trusted-section">
+        <div class="container">
+            <div class="text-center">
+                <h3><span class="text-gray-light">Trusted by experts.</span><br><strong>Used by industry leaders.</strong></h3>
+            </div>
+            <div class="trusted-divider"></div>
+
+            <div class="logo-cloud">
+                <div class="logo-track">
+                    <div class="logo-slide">
+                        <img src="https://svgl.app/library/nvidia-wordmark-light.svg" alt="Nvidia">
+                        <img src="https://svgl.app/library/openai_wordmark_light.svg" alt="OpenAI">
+                        <img src="https://svgl.app/library/vercel_wordmark.svg" alt="Vercel">
+                        <img src="https://svgl.app/library/github_wordmark_light.svg" alt="GitHub">
+                        <img src="https://svgl.app/library/supabase_wordmark_light.svg" alt="Supabase">
+                        <img src="https://svgl.app/library/stripe-wordmark.svg" alt="Stripe">
+                        <img src="https://svgl.app/library/slack_wordmark.svg" alt="Slack">
+                        <img src="https://svgl.app/library/notion-wordmark.svg" alt="Notion">
+                    </div>
+                    <div class="logo-slide">
+                        <img src="https://svgl.app/library/nvidia-wordmark-light.svg" alt="Nvidia">
+                        <img src="https://svgl.app/library/openai_wordmark_light.svg" alt="OpenAI">
+                        <img src="https://svgl.app/library/vercel_wordmark.svg" alt="Vercel">
+                        <img src="https://svgl.app/library/github_wordmark_light.svg" alt="GitHub">
+                        <img src="https://svgl.app/library/supabase_wordmark_light.svg" alt="Supabase">
+                        <img src="https://svgl.app/library/stripe-wordmark.svg" alt="Stripe">
+                        <img src="https://svgl.app/library/slack_wordmark.svg" alt="Slack">
+                        <img src="https://svgl.app/library/notion-wordmark.svg" alt="Notion">
+                    </div>
+                </div>
+            </div>
+
+            <div class="trusted-divider"></div>
+        </div>
+    </section>
+
+    <!-- ========== NEW SECTIONS END ========== -->
+
+    <!-- Pre-Footer Map / Network -->
+    <section class="locations-section text-center bg-gray">
+        <div class="container">
+            <p class="section-label">LOCATIONS</p>
+            <h2>We operate across continents <br> globally for you.</h2>
+            <img src="assets/world_map.png" alt="Global Operations Map" class="world-map mt-4">
+        </div>
+    </section>
+
+    <!-- FAQ Section (added since navbar links to it) -->
+    <section class="faq-section bg-gray" id="faq">
+        <div class="container">
+            <p class="section-label">FAQ</p>
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-list mt-4">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How fast can I get set up?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can deploy your first agent in under 10 minutes using our intuitive drag-and-drop dashboard.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I upload my own voice clone?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide HIPAA compliance?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What integrations are available natively?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container text-center">
+                <h2>Stay connected with <span class="highlight-orange">AI VOICE.</span></h2>
+                <form class="subscribe-form mt-3">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-middle mt-5">
+            <div class="container flex-footer">
+                <div class="footer-brand">
+                    <a href="#" class="logo"><strong>AI</strong> VOICE</a>
+                    <p class="text-sm mt-2 text-gray-light">Scalable AI Voice Operations.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Integrations</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Changelog</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">Help Center</a>
+                        <a href="#">Community</a>
+                        <a href="#">API Reference</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom mt-4">
+            <div class="container text-center text-gray-light text-sm">
+                &copy; <script>document.write(new Date().getFullYear())</script> AI VOICE. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

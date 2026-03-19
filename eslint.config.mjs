@@ -14,6 +14,7 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     "venv-rembg/**",
     "talira-app/**",
+    "_legacy_html/**",
     "components/**",
   ]),
 ]);

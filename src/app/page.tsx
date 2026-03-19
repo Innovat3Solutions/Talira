@@ -124,10 +124,15 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-semibold tracking-tight text-zinc-900 mb-6 max-w-5xl mx-auto leading-[1.1]">
-              Transform Your <TypingAnimation />
-              <br />
-              Operations <br className="hidden md:block"/>
-              with Scalable AI Voice Agents
+              <span className="block md:inline">Transform Your </span>
+              <span className="flex justify-center md:inline-block min-h-[1.5em] md:min-h-0 my-1 md:my-0">
+                <TypingAnimation />
+              </span>
+              <br className="hidden md:block" />
+              <span className="block md:inline">
+                Operations <br className="hidden md:block"/>
+                with Scalable AI Voice Agents
+              </span>
             </h1>
 
             {/* Subheadline */}

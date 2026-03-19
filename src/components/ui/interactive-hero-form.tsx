@@ -36,14 +36,22 @@ export function InteractiveHeroForm({
       setSliderWidth(containerRef.current.offsetWidth);
     }
 
+    // Throttled resize handler for better performance
+    let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
-      if (containerRef.current) {
-        setSliderWidth(containerRef.current.offsetWidth);
-      }
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (containerRef.current) {
+          setSliderWidth(containerRef.current.offsetWidth);
+        }
+      }, 100);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(resizeTimeout);
+    };
   }, [isUnlocked]);
 
   const x = useMotionValue(0);
@@ -200,8 +208,11 @@ export function InteractiveHeroForm({
           transition={{ duration: 0.3 }}
           className="relative w-full"
         >
-          {/* Outer glow effect */}
-          <div className="absolute -inset-2 bg-[#F25C22]/20 rounded-full blur-xl animate-pulse pointer-events-none" />
+          {/* Outer glow effect - reduced animation for mobile performance */}
+          <div
+            className="absolute -inset-2 bg-[#F25C22]/15 rounded-full blur-xl pointer-events-none"
+            style={{ willChange: 'opacity' }}
+          />
 
           <div
             ref={containerRef}
@@ -220,20 +231,31 @@ export function InteractiveHeroForm({
                }}
              />
 
-             {/* Pulse ring behind thumb - enhanced glow */}
-             <div className="absolute left-1.5 sm:left-2 w-12 h-12 sm:w-14 sm:h-14 bg-[#F25C22]/50 rounded-full animate-ping pointer-events-none z-10" />
-             <div className="absolute left-1.5 sm:left-2 w-12 h-12 sm:w-14 sm:h-14 bg-[#F25C22]/30 rounded-full animate-pulse pointer-events-none z-10" style={{ animationDelay: '0.5s' }} />
+             {/* Pulse ring behind thumb - optimized for mobile */}
+             <div
+               className="absolute left-1.5 sm:left-2 w-12 h-12 sm:w-14 sm:h-14 bg-[#F25C22]/40 rounded-full pointer-events-none z-10"
+               style={{
+                 animation: 'pulse-glow 2s ease-in-out infinite',
+                 willChange: 'opacity, transform'
+               }}
+             />
 
-             {/* Draggable Thumb with glow */}
+             {/* Draggable Thumb with glow - GPU accelerated */}
              <motion.div
                drag="x"
                dragConstraints={containerRef}
-               dragElastic={0.05}
+               dragElastic={0.02}
+               dragMomentum={false}
                onDragEnd={handleDragEnd}
                animate={controls}
-               style={{ x }}
-               whileDrag={{ scale: 0.95 }}
-               className="absolute left-1.5 sm:left-2 w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(242,92,34,0.4)] cursor-grab active:cursor-grabbing z-20 overflow-hidden ring-2 ring-[#F25C22]/30"
+               style={{
+                 x,
+                 willChange: 'transform',
+                 transform: 'translateZ(0)'
+               }}
+               whileDrag={{ scale: 0.97 }}
+               transition={{ type: "tween", duration: 0.1 }}
+               className="absolute left-1.5 sm:left-2 w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(242,92,34,0.4)] cursor-grab active:cursor-grabbing z-20 overflow-hidden ring-2 ring-[#F25C22]/30 touch-manipulation"
              >
                <Image src="/talira-icon.png" alt="Talira" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10 object-contain" draggable={false} />
              </motion.div>
@@ -252,7 +274,7 @@ export function InteractiveHeroForm({
       {/* Fallback button for SSR / before mount */}
       {!isMounted && !isUnlocked && (
          <div className={`relative w-full h-[60px] sm:h-[72px] rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.15),0_0_40px_rgba(242,92,34,0.3)] overflow-hidden flex items-center ${accentColor === 'orange' ? 'bg-[#F25C22]' : 'bg-[#2A2A2A]'}`}>
-            <div className="absolute left-1.5 sm:left-2 w-12 h-12 sm:w-14 sm:h-14 bg-[#F25C22]/50 rounded-full animate-ping pointer-events-none z-10" />
+            <div className="absolute left-1.5 sm:left-2 w-12 h-12 sm:w-14 sm:h-14 bg-[#F25C22]/40 rounded-full pointer-events-none z-10" style={{ animation: 'pulse-glow 2s ease-in-out infinite' }} />
             <div className="absolute left-1.5 sm:left-2 w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center z-20 overflow-hidden ring-2 ring-[#F25C22]/30 shadow-[0_4px_20px_rgba(242,92,34,0.4)]">
                <Image src="/talira-icon.png" alt="Talira" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
             </div>

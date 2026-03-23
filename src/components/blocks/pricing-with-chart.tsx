@@ -167,7 +167,7 @@ export default function PricingWithChart() {
 							animate={{ opacity: 1, y: 0, scale: 1 }}
 							exit={{ opacity: 0, y: 20, scale: 0.95 }}
 							transition={{ duration: 0.2 }}
-							className="w-full max-w-lg bg-white rounded-[2rem] shadow-2xl p-6 md:p-8 relative overflow-hidden"
+							className="w-full max-w-3xl bg-white rounded-[2rem] shadow-2xl p-6 md:p-8 relative overflow-hidden"
 							onClick={(e) => e.stopPropagation()}
 						>
 							{/* Decorative glow */}
@@ -181,57 +181,27 @@ export default function PricingWithChart() {
 								<X className="w-5 h-5" />
 							</button>
 
-							<div className="relative z-10">
-								<h3 className="text-2xl font-bold text-black tracking-tight mb-2">Get Started</h3>
-								<p className="text-sm font-medium text-zinc-500 mb-8">Fill out the form and we'll set up your AI voice agent.</p>
+							<motion.div
+  className="w-full relative overflow-hidden"
+>
+  <div className="relative z-10">
+    <h3 className="text-4xl text-center font-bold text-black tracking-tight mb-2">
+      Get Started
+    </h3>
 
-								<form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert("Form submitted!"); setShowModal(false); }}>
-									<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-										{/* Name */}
-										<div>
-											<label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Name</label>
-											<div className="flex items-center bg-zinc-50 rounded-xl px-4 py-3 border border-zinc-200 focus-within:border-[#F25C22] transition-colors group">
-												<User className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-												<input required type="text" placeholder="John Doe" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
-											</div>
-										</div>
+    <p className="text-sm  text-center font-medium text-zinc-500 mb-8">
+      Fill out the form and we'll set up your AI voice agent.
+    </p>
 
-										{/* Business Email */}
-										<div>
-											<label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Business Email</label>
-											<div className="flex items-center bg-zinc-50 rounded-xl px-4 py-3 border border-zinc-200 focus-within:border-[#F25C22] transition-colors group">
-												<Mail className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-												<input required type="email" placeholder="john@company.com" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
-											</div>
-										</div>
-
-										{/* Phone Number */}
-										<div>
-											<label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Phone Number</label>
-											<div className="flex items-center bg-zinc-50 rounded-xl px-4 py-3 border border-zinc-200 focus-within:border-[#F25C22] transition-colors group">
-												<PhoneIcon className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-												<input required type="tel" placeholder="+1 (555) 000-0000" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
-											</div>
-										</div>
-
-										{/* Business Website */}
-										<div>
-											<label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Business Website</label>
-											<div className="flex items-center bg-zinc-50 rounded-xl px-4 py-3 border border-zinc-200 focus-within:border-[#F25C22] transition-colors group">
-												<Globe className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-												<input type="url" placeholder="https://company.com" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
-											</div>
-										</div>
-									</div>
-
-									<button type="submit" className="w-full mt-6 flex items-center justify-center bg-[#F25C22] text-white rounded-xl px-6 py-4 font-bold tracking-wide shadow-lg shadow-[#F25C22]/30 hover:bg-[#e04c10] transition-colors group overflow-hidden relative">
-										<span className="relative z-10 flex items-center gap-2">
-											Submit <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-										</span>
-										<div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-									</button>
-								</form>
-							</div>
+    <div className="w-full">
+      <iframe
+        src="https://crm.innovat3solutions.com/widget/form/0zQlafTmVfuNB2D4Um3u"
+        className="w-full h-[300px] border-0 rounded-xl"
+        title="Talira form"
+      />
+    </div>
+  </div>
+</motion.div>
 						</motion.div>
 					</motion.div>
 				)}

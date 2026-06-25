@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://talira.com"),
+  metadataBase: new URL("https://taliravoice.com"),
   title: "Talira | AI Voice Agents for Customer Support & Sales",
   description: "Transform your customer support and sales operations with scalable Talira AI voice agents. Never miss a call again, generate leads, and automate 24/7.",
   keywords: ["AI voice agents", "customer support AI", "AI sales assistant", "automated inbound calls", "outbound AI calling", "Talira"],
   openGraph: {
     title: "Talira | AI Voice Agents",
     description: "Deploy scalable AI voice agents to resolve over 50% of inbound volume and reach entirely custom outbound campaigns.",
-    url: "https://talira.com",
+    url: "https://taliravoice.com",
     siteName: "Talira AI",
     images: [
       {

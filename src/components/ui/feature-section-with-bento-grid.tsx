@@ -186,7 +186,7 @@ export function FeaturesSectionWithBentoGrid() {
                 </div>
                 <div className="flex-1 flex justify-center sm:justify-start lg:justify-center">
                   <div className="bg-zinc-100/80 rounded-md px-3 py-1 text-[10px] font-medium text-black flex items-center gap-2 w-full max-w-[280px] shadow-inner">
-                    <Lock className="w-2.5 h-2.5 text-black" /> app.talira.ai/dashboard
+                    <Lock className="w-2.5 h-2.5 text-black" /> app.taliravoice.com/dashboard
                   </div>
                 </div>
               </div>

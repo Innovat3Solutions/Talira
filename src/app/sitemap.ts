@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { industries } from '@/data/industries'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://talira.com'
+    const baseUrl = 'https://taliravoice.com'
     const lastModified = new Date()
 
     const staticPaths = [

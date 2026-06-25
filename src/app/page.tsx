@@ -26,6 +26,9 @@ const logos = [
   { src: "https://svgl.app/library/turso-wordmark-light.svg", alt: "Turso Logo" },
   { src: "https://svgl.app/library/vercel_wordmark.svg", alt: "Vercel Logo" },
   { src: "https://svgl.app/library/github_wordmark_light.svg", alt: "GitHub Logo" },
+  { src: "/Twilio-logo-red.svg.png", alt: "Twilio Logo" },
+  { src: "/Gohighlevel%20Logo.webp", alt: "GoHighLevel Logo" },
+  { src: "/ElevenLabs_logo.png", alt: "ElevenLabs Logo" },
 ];
 
 const timelineData = [

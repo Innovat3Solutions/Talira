@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
 import { Phone, X, User, Mail, Globe, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { VoiceTestModal } from "@/components/ui/voice-test-modal";
 
 export function InteractiveHeroForm({ 
   modalMode = false,
@@ -23,6 +24,25 @@ export function InteractiveHeroForm({
 } = {}) {
   const [isMounted, setIsMounted] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const [voiceModalOpen, setVoiceModalOpen] = useState(false);
+  const [lead, setLead] = useState<{ name?: string; email?: string; phone?: string; website?: string }>({});
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    let website = (fd.get("website") as string) || "";
+    if (website && !/^https?:\/\//i.test(website)) {
+      website = `https://${website}`;
+    }
+    setLead({
+      name: (fd.get("name") as string) || "",
+      email: (fd.get("email") as string) || "",
+      phone: (fd.get("phone") as string) || "",
+      website: website,
+    });
+    handleCloseForm();
+    setVoiceModalOpen(true);
+  };
   const containerRef = useRef<HTMLDivElement>(null);
   const [sliderWidth, setSliderWidth] = useState(0);
   const thumbWidth = isMounted && window.innerWidth < 640 ? 48 : 56; // 3rem vs 3.5rem
@@ -109,14 +129,14 @@ export function InteractiveHeroForm({
           <p className="text-sm font-medium text-zinc-500 mb-8">{subtitle}</p>
           
           {type === "contact" && (
-            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert("Form submitted!"); }}>
+            <form className="space-y-4" onSubmit={handleFormSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                {/* Name */}
                <div>
                   <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Name</label>
                   <div className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm border border-zinc-200/80 focus-within:border-[#F25C22] transition-colors group">
                     <User className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-                    <input required type="text" placeholder="John Doe" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
+                    <input required name="name" type="text" placeholder="John Doe" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
                   </div>
                </div>
                
@@ -125,7 +145,7 @@ export function InteractiveHeroForm({
                   <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Business Email</label>
                   <div className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm border border-zinc-200/80 focus-within:border-[#F25C22] transition-colors group">
                     <Mail className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-                    <input required type="email" placeholder="john@company.com" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
+                    <input required name="email" type="email" placeholder="john@company.com" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
                   </div>
                </div>
                
@@ -134,7 +154,7 @@ export function InteractiveHeroForm({
                   <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Phone Number</label>
                   <div className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm border border-zinc-200/80 focus-within:border-[#F25C22] transition-colors group">
                     <Phone className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-                    <input required type="tel" placeholder="+1 (555) 000-0000" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
+                    <input required name="phone" type="tel" placeholder="+1 (555) 000-0000" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
                   </div>
                </div>
                
@@ -143,14 +163,14 @@ export function InteractiveHeroForm({
                   <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Business Website</label>
                   <div className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm border border-zinc-200/80 focus-within:border-[#F25C22] transition-colors group">
                     <Globe className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-                    <input type="url" placeholder="https://company.com" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
+                    <input name="website" type="text" placeholder="company.com" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
                   </div>
                </div>
             </div>
             
             <button type="submit" className="w-full mt-6 flex items-center justify-center bg-[#F25C22] text-white rounded-xl px-6 py-4 font-bold tracking-wide shadow-lg shadow-[#F25C22]/30 hover:bg-[#e04c10] transition-colors group overflow-hidden relative">
                <span className="relative z-10 flex items-center gap-2">
-                 Schedule a Call <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                 Try Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                </span>
                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
@@ -199,6 +219,8 @@ export function InteractiveHeroForm({
   }
 
   return (
+    <>
+    <VoiceTestModal open={voiceModalOpen} onClose={() => setVoiceModalOpen(false)} lead={lead} />
     <div className="w-full max-w-sm mx-auto flex flex-col items-center min-h-[60px] sm:min-h-[72px]">
       {/* Slider Button */}
       {isMounted && !isUnlocked && (
@@ -285,5 +307,6 @@ export function InteractiveHeroForm({
       )}
 
     </div>
+    </>
   );
 }

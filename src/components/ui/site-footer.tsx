@@ -78,13 +78,11 @@ export function SiteFooter() {
                     <div>
                       <h4 className="text-white font-bold mb-6 text-[13px] tracking-tight">Solution</h4>
                       <ul className="space-y-4 text-[13px] font-medium text-zinc-400">
-                        <li><Link href="#" className="hover:text-white transition-colors block">Try for free</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Integrations</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Phone numbers</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Available languages</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">AI call center</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">No-code Platform</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Frequently asked questions</Link></li>
+                        <li><Link href="/integrations" className="hover:text-white transition-colors block">Integrations</Link></li>
+                        <li><Link href="/phone-numbers" className="hover:text-white transition-colors block">Phone numbers</Link></li>
+                        <li><Link href="/available-languages" className="hover:text-white transition-colors block">Available languages</Link></li>
+                        <li><Link href="/no-code-platform" className="hover:text-white transition-colors block">No-code Platform</Link></li>
+                        <li><Link href="/faq" className="hover:text-white transition-colors block">Frequently asked questions</Link></li>
                       </ul>
                     </div>
                     
@@ -95,9 +93,7 @@ export function SiteFooter() {
                         <li><Link href="/features" className="hover:text-white transition-colors block">Features</Link></li>
                         <li><Link href="/about" className="hover:text-white transition-colors block">About Us</Link></li>
                         <li><Link href="/pricing" className="hover:text-white transition-colors block">Pricing</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">White label</Link></li>
                         <li><Link href="#" className="hover:text-white transition-colors block">Sign up now</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Log in</Link></li>
                       </ul>
                     </div>
                     
@@ -105,13 +101,10 @@ export function SiteFooter() {
                     <div>
                       <h4 className="text-white font-bold mb-6 text-[13px] tracking-tight">Resources</h4>
                       <ul className="space-y-4 text-[13px] font-medium text-zinc-400">
-                        <li><Link href="#" className="hover:text-white transition-colors block">Contact</Link></li>
+                        <li><Link href="/contact" className="hover:text-white transition-colors block">Contact</Link></li>
                         <li><Link href="#" className="hover:text-white transition-colors block">Blog</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Documentation</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Status</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Changelog</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Privacy Policy</Link></li>
-                        <li><Link href="#" className="hover:text-white transition-colors block">Terms and conditions</Link></li>
+                        <li><Link href="/privacy-policy" className="hover:text-white transition-colors block">Privacy Policy</Link></li>
+                        <li><Link href="/terms-and-conditions" className="hover:text-white transition-colors block">Terms and conditions</Link></li>
                       </ul>
                     </div>
                     
@@ -134,8 +127,9 @@ export function SiteFooter() {
               </div>
               
               <div className="flex flex-col md:flex-row items-center justify-between border-t border-white/10 pt-8 mt-4 whitespace-normal text-center md:text-left">
-                <div className="text-[11px] text-zinc-500 font-medium tracking-wide mb-4 md:mb-0">
-                  Copyright © 2026 All rights reserved. 
+                <div className="flex flex-col sm:flex-row items-center gap-x-4 gap-y-1 text-[11px] text-zinc-500 font-medium tracking-wide mb-4 md:mb-0">
+                  <span>Copyright © 2026 All rights reserved.</span>
+                  <Link href="/site-map" className="hover:text-white transition-colors">Sitemap</Link>
                 </div>
                 <div className="text-[11px] text-zinc-500 font-medium tracking-wide">
                   Designed & Powered by{" "}

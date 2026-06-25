@@ -78,10 +78,10 @@ export default function FeaturesPage() {
                   
                   {/* Text Content */}
                   <div className="relative z-10 flex-1 flex flex-col justify-center">
-                     <span className="bg-[#F25C22] text-white text-xs font-bold px-3 py-1 rounded-full self-start mb-6 shadow-sm">Developer First</span>
-                     <h3 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4 tracking-tight">Custom Webhooks</h3>
+                     <span className="bg-[#F25C22] text-white text-xs font-bold px-3 py-1 rounded-full self-start mb-6 shadow-sm">Done For You</span>
+                     <h3 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4 tracking-tight">Custom Integrations</h3>
                      <p className="text-zinc-600 text-lg md:text-xl leading-relaxed max-w-md">
-                       Don't see your platform? No problem. Fire granular JSON payloads to Zapier, Make.com, or directly to your server instantaneously post-call.
+                       Don't see your platform? No problem. Our team builds and manages the connection for you — Talira syncs into any system you use, and we handle every bit of it.
                      </p>
                   </div>
                   

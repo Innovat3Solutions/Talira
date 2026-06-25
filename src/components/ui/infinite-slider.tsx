@@ -1,7 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { useMotionValue, animate, motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import useMeasure from 'react-use-measure';
 
 type InfiniteSliderProps = {
@@ -12,6 +12,12 @@ type InfiniteSliderProps = {
   direction?: 'horizontal' | 'vertical';
   reverse?: boolean;
   className?: string;
+  /**
+   * How many times the children are duplicated in the track. Rendering more
+   * copies guarantees the track always overflows the container, so there is no
+   * blank gap at the edges regardless of how few logos are supplied.
+   */
+  repeat?: number;
 };
 
 export function InfiniteSlider({
@@ -22,6 +28,7 @@ export function InfiniteSlider({
   direction = 'horizontal',
   reverse = false,
   className,
+  repeat = 4,
 }: InfiniteSliderProps) {
   const [currentDuration, setCurrentDuration] = useState(duration);
   const [ref, { width, height }] = useMeasure();
@@ -32,9 +39,11 @@ export function InfiniteSlider({
   useEffect(() => {
     let controls;
     const size = direction === 'horizontal' ? width : height;
-    const contentSize = size + gap;
-    const from = reverse ? -contentSize / 2 : 0;
-    const to = reverse ? 0 : -contentSize / 2;
+    // One "period" is the width of a single copy of the children (including its
+    // trailing gap). Translating by exactly one period gives a seamless loop.
+    const contentSize = (size + gap) / repeat;
+    const from = reverse ? -contentSize : 0;
+    const to = reverse ? 0 : -contentSize;
 
     if (isTransitioning) {
       controls = animate(translation, [translation.get(), to], {
@@ -70,6 +79,7 @@ export function InfiniteSlider({
     isTransitioning,
     direction,
     reverse,
+    repeat,
   ]);
 
   const hoverProps = durationOnHover
@@ -99,8 +109,9 @@ export function InfiniteSlider({
         ref={ref}
         {...hoverProps}
       >
-        {children}
-        {children}
+        {Array.from({ length: repeat }).map((_, index) => (
+          <Fragment key={index}>{children}</Fragment>
+        ))}
       </motion.div>
     </div>
   );

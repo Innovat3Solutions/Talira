@@ -13,7 +13,7 @@ const pricingTiers = [
     name: "Discover AI",
     price: "$0",
     period: "",
-    description: "One-time free trial limited to a 5-minute live conversation using your business information as the knowledge base.",
+    description: "A free, one-time 5-minute live conversation powered by your own business information.",
     setupFee: "Free Trial",
     features: [
       "Custom Voice Agent Generation",
@@ -33,7 +33,7 @@ const pricingTiers = [
     name: "Growth Partner",
     price: "$497",
     period: "/mo",
-    description: "Single agent processing calls directly into your CRM, calendar, and human pipelines.",
+    description: "A dedicated agent that books, syncs, and routes calls straight into your stack.",
     setupFee: "$1,500 One-Time Setup",
     features: [
       "1 Dedicated Voice Agent",
@@ -53,7 +53,7 @@ const pricingTiers = [
     name: "Innovation",
     price: "Custom",
     period: " Pricing",
-    description: "Advanced orchestration with multiple agents, distinct roles, and complex handoffs.",
+    description: "Multi-agent orchestration with distinct roles, complex handoffs, and custom logic.",
     setupFee: "White-Glove Implementation",
     features: [
       "Multiple AI Agents & Roles",
@@ -132,14 +132,14 @@ export default function PricingPage() {
         {/* ================= PRICING TIERS ================= */}
         <section className="py-12 -mt-20 relative z-20 px-4">
            <div className="container mx-auto max-w-6xl">
-              <div className="flex overflow-x-auto pb-12 -mx-4 px-4 snap-x snap-mandatory md:mx-0 md:px-0 md:grid md:grid-cols-3 gap-6 md:gap-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              <div className="flex overflow-x-auto md:overflow-visible pt-8 pb-12 -mx-4 px-4 snap-x snap-mandatory md:mx-0 md:px-0 md:grid md:grid-cols-3 md:items-stretch gap-6 md:gap-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                  {pricingTiers.map((tier, idx) => (
-                    <div 
-                      key={idx} 
-                      className={`relative bg-white rounded-3xl p-8 flex flex-col transition-all duration-500 hover:-translate-y-2 group shrink-0 w-[85vw] sm:w-[400px] md:w-auto snap-center
-                        ${tier.popular 
-                          ? 'border-[2px] border-[#F25C22] shadow-[0_20px_50px_rgba(242,92,34,0.15)] scale-100 md:scale-105 z-10' 
-                          : 'border border-zinc-200 shadow-xl'
+                    <div
+                      key={idx}
+                      className={`relative rounded-[1.75rem] p-8 flex flex-col transition-all duration-500 hover:-translate-y-2 group shrink-0 w-[85vw] sm:w-[400px] md:w-auto snap-center
+                        ${tier.popular
+                          ? 'bg-gradient-to-b from-orange-50 via-white to-white border-2 border-[#F25C22] shadow-[0_30px_70px_-12px_rgba(242,92,34,0.28)] ring-1 ring-orange-100 md:scale-[1.06] z-10'
+                          : 'bg-white border border-zinc-200/80 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.12)]'
                         }
                       `}
                     >
@@ -150,14 +150,14 @@ export default function PricingPage() {
                        )}
                        
                        <h3 className="text-2xl font-bold text-zinc-900 mb-2">{tier.name}</h3>
-                       <p className="text-sm text-zinc-500 mb-6 h-10">{tier.description}</p>
-                       
+                       <p className="text-sm text-zinc-500 mb-6 min-h-[40px] leading-relaxed">{tier.description}</p>
+
                        <div className="mb-6 pb-6 border-b border-zinc-100">
-                          <div className="flex items-end gap-1 mb-1">
-                             <span className="text-4xl font-black tracking-tighter text-zinc-900">{tier.price}</span>
-                             <span className="text-zinc-500 mb-1">{tier.period}</span>
+                          <div className="flex items-end gap-1 mb-3">
+                             <span className="text-5xl font-black tracking-tighter text-zinc-900">{tier.price}</span>
+                             <span className="text-zinc-500 mb-1.5">{tier.period}</span>
                           </div>
-                          <span className="text-[11px] font-bold text-[#F25C22] bg-orange-50 px-2 py-1 rounded-md">{tier.setupFee}</span>
+                          <span className="inline-block text-[11px] font-bold text-[#F25C22] bg-orange-50 border border-orange-100 px-2.5 py-1 rounded-md">{tier.setupFee}</span>
                        </div>
                        
                        <div className="flex-1 space-y-4 mb-8">

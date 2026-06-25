@@ -80,6 +80,9 @@ export function SiteNavbar() {
           <Link href="/about" className="px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-[#F25C22] dark:text-zinc-300 dark:hover:text-white transition-colors rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800">
             About Us
           </Link>
+          <Link href="/contact" className="px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-[#F25C22] dark:text-zinc-300 dark:hover:text-white transition-colors rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800">
+            Contact
+          </Link>
         </nav>
 
         {/* CTA Button & Mobile Toggle */}
@@ -149,8 +152,11 @@ export function SiteNavbar() {
               <Link href="/pricing" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-base font-semibold text-zinc-800 hover:text-[#F25C22] dark:text-zinc-200 dark:hover:text-white border-b border-zinc-100 dark:border-zinc-800 transition-colors">
                 Pricing
               </Link>
-              <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-base font-semibold text-zinc-800 hover:text-[#F25C22] dark:text-zinc-200 dark:hover:text-white transition-colors">
+              <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-base font-semibold text-zinc-800 hover:text-[#F25C22] dark:text-zinc-200 dark:hover:text-white border-b border-zinc-100 dark:border-zinc-800 transition-colors">
                 About Us
+              </Link>
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-base font-semibold text-zinc-800 hover:text-[#F25C22] dark:text-zinc-200 dark:hover:text-white transition-colors">
+                Contact
               </Link>
             </div>
           </motion.div>

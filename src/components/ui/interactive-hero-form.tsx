@@ -1,11 +1,11 @@
 "use client";
 
+import Script from "next/script";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
-import { Phone, X, User, Mail, Globe, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { VoiceTestModal } from "@/components/ui/voice-test-modal";
+import { X, Globe } from "lucide-react";
 
 export function InteractiveHeroForm({ 
   modalMode = false,
@@ -24,25 +24,8 @@ export function InteractiveHeroForm({
 } = {}) {
   const [isMounted, setIsMounted] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(false);
-  const [voiceModalOpen, setVoiceModalOpen] = useState(false);
-  const [lead, setLead] = useState<{ name?: string; email?: string; phone?: string; website?: string }>({});
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    let website = (fd.get("website") as string) || "";
-    if (website && !/^https?:\/\//i.test(website)) {
-      website = `https://${website}`;
-    }
-    setLead({
-      name: (fd.get("name") as string) || "",
-      email: (fd.get("email") as string) || "",
-      phone: (fd.get("phone") as string) || "",
-      website: website,
-    });
-    handleCloseForm();
-    setVoiceModalOpen(true);
-  };
+  
   const containerRef = useRef<HTMLDivElement>(null);
   const [sliderWidth, setSliderWidth] = useState(0);
   const thumbWidth = isMounted && window.innerWidth < 640 ? 48 : 56; // 3rem vs 3.5rem
@@ -112,7 +95,7 @@ export function InteractiveHeroForm({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20, scale: 0.95 }}
         transition={{ duration: 0.3 }}
-        className="w-full max-w-2xl mx-auto bg-white/80 backdrop-blur-xl rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-white/80 p-6 md:p-8 text-left relative overflow-hidden"
+        className="w-full max-w-3xl mx-auto bg-white/80 backdrop-blur-xl rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-white/80 p-6 md:p-8 text-left relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#F25C22]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 z-0 pointer-events-none" />
 
@@ -128,54 +111,31 @@ export function InteractiveHeroForm({
           <h3 className="text-2xl font-bold text-black tracking-tight mb-2">{title}</h3>
           <p className="text-sm font-medium text-zinc-500 mb-8">{subtitle}</p>
           
-          {type === "contact" && (
-            <form className="space-y-4" onSubmit={handleFormSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-               {/* Name */}
-               <div>
-                  <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Name</label>
-                  <div className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm border border-zinc-200/80 focus-within:border-[#F25C22] transition-colors group">
-                    <User className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-                    <input required name="name" type="text" placeholder="John Doe" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
-                  </div>
-               </div>
-               
-               {/* Business Email */}
-               <div>
-                  <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Business Email</label>
-                  <div className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm border border-zinc-200/80 focus-within:border-[#F25C22] transition-colors group">
-                    <Mail className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-                    <input required name="email" type="email" placeholder="john@company.com" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
-                  </div>
-               </div>
-               
-               {/* Phone Number */}
-               <div>
-                  <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Phone Number</label>
-                  <div className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm border border-zinc-200/80 focus-within:border-[#F25C22] transition-colors group">
-                    <Phone className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-                    <input required name="phone" type="tel" placeholder="+1 (555) 000-0000" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
-                  </div>
-               </div>
-               
-               {/* Business Website */}
-               <div>
-                  <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1.5 ml-1">Business Website</label>
-                  <div className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm border border-zinc-200/80 focus-within:border-[#F25C22] transition-colors group">
-                    <Globe className="w-4 h-4 text-zinc-400 group-focus-within:text-[#F25C22] mr-3" />
-                    <input name="website" type="text" placeholder="company.com" className="bg-transparent border-none outline-none w-full text-sm text-zinc-800 placeholder:text-zinc-400 font-medium" />
-                  </div>
-               </div>
-            </div>
-            
-            <button type="submit" className="w-full mt-6 flex items-center justify-center bg-[#F25C22] text-white rounded-xl px-6 py-4 font-bold tracking-wide shadow-lg shadow-[#F25C22]/30 hover:bg-[#e04c10] transition-colors group overflow-hidden relative">
-               <span className="relative z-10 flex items-center gap-2">
-                 Try Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-               </span>
-               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            </button>
-          </form>
-          )}
+        {type === "contact" && (
+  <>
+    <div className="w-full h-[auto] overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+      <iframe
+        src="https://crm.innovat3solutions.com/widget/form/kZrcbTEMqaeaakizGxIj"
+        id="inline-kZrcbTEMqaeaakizGxIj"
+        title="Talira Contact Form"
+        className="w-full h-full border-0"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-activation-type="alwaysActivated"
+        data-deactivation-type="neverDeactivate"
+        data-form-name="Talira Contact form"
+        data-height="672"
+        data-layout-iframe-id="inline-kZrcbTEMqaeaakizGxIj"
+        data-form-id="kZrcbTEMqaeaakizGxIj"
+      />
+    </div>
+
+    <Script
+      src="https://crm.innovat3solutions.com/js/form_embed.js"
+      strategy="afterInteractive"
+    />
+  </>
+)}
 
           {type === "deploy" && (
              <div className="py-12 flex flex-col items-center justify-center text-center">
@@ -220,7 +180,7 @@ export function InteractiveHeroForm({
 
   return (
     <>
-    <VoiceTestModal open={voiceModalOpen} onClose={() => setVoiceModalOpen(false)} lead={lead} />
+  
     <div className="w-full max-w-sm mx-auto flex flex-col items-center min-h-[60px] sm:min-h-[72px]">
       {/* Slider Button */}
       {isMounted && !isUnlocked && (
